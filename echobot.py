@@ -10,9 +10,8 @@ def handle_app_mention_events(body, say):
     user = body['event']['user']
 
     if check == "?":
-        bot = body['authorizations'][0]['user_id']
-        message = body['event']['text'].replace(f"<@{bot}>", "", 1)
-        say(f"Hi there, <@{user}>! You said the following:\n\"" + message.strip() + "\"")
+        message = body['event']['text']
+        say(f"Hi there, <@{user}>! You said the following:\n\"" + message + "\"")
     else:
         say(f"Hi there, <@{user}>! Did you mean to ask a question?")
 
