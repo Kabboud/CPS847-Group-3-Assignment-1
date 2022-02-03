@@ -1,4 +1,3 @@
-import logging
 from slack_bolt import App
 
 app = App()
@@ -17,7 +16,4 @@ def handle_app_mention_events(body, say):
 
 
 if __name__ == "__main__":
-    logger = logging.getLogger()
-    logger.setLevel(logging.DEBUG)
-    logger.addHandler(logging.StreamHandler())
     app.start(3000)
